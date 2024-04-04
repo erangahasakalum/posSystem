@@ -16,7 +16,9 @@
                 <div class="logo">
                     <img src="assets/img/dashBoardLogo.png" id="logo">
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -38,16 +40,23 @@
     <div>
         <div class="container-fluid searchBarParent">
             <div id="searchBar" class="input-group mb-3">
-                <input id="searchInputField" type="text" class="form-control" placeholder="Search Customer" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input id="searchInputField" type="text" class="form-control" placeholder="Search Customer"
+                       aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
             </div>
         </div>
 
         <div id="crudButton" class="relativePosition">
             <div class="absolutePosition">
-                <button class="noBorder btn btn-outline-secondary newButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#newModal" type="button">New</button>
-                <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#updateModal" type="button">Update</button>
-                <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor" data-bs-toggle="modal" data-bs-target="#removeModal" type="button">Remove</button>
+                <button class="noBorder btn btn-outline-secondary newButton whiteTextColor" data-bs-toggle="modal"
+                        data-bs-target="#savecustomer" type="button">Save
+                </button>
+                <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor"
+                        data-bs-toggle="modal" data-bs-target="#updateModal" type="button">Update
+                </button>
+                <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor"
+                        data-bs-toggle="modal" data-bs-target="#removeModal" type="button">Delete
+                </button>
             </div>
         </div>
     </div>
@@ -95,28 +104,28 @@
 
             <tr>
                 <th class="orderTableBody" scope="row">4</th>
-                <td class="orderTableBody" >Larry the Bird</td>
+                <td class="orderTableBody">Larry the Bird</td>
                 <td class="orderTableBody">@twitter</td>
                 <td class="orderTableBody">@twitter</td>
             </tr>
 
             <tr>
                 <th class="orderTableBody" scope="row">5</th>
-                <td class="orderTableBody" >Larry the Bird</td>
+                <td class="orderTableBody">Larry the Bird</td>
                 <td class="orderTableBody">@twitter</td>
                 <td class="orderTableBody">@twitter</td>
             </tr>
 
             <tr>
                 <th class="orderTableBody" scope="row">6</th>
-                <td class="orderTableBody" >Larry the Bird</td>
+                <td class="orderTableBody">Larry the Bird</td>
                 <td class="orderTableBody">@twitter</td>
                 <td class="orderTableBody">@twitter</td>
             </tr>
 
             <tr>
                 <th class="orderTableBody" scope="row">7</th>
-                <td class="orderTableBody" >Larry the Bird</td>
+                <td class="orderTableBody">Larry the Bird</td>
                 <td class="orderTableBody">@twitter</td>
                 <td class="orderTableBody">@twitter</td>
             </tr>
@@ -125,6 +134,34 @@
     </div>
 </section>
 
+<!--save Customers modal-->
+<div class="modal" tabindex="-1" id="savecustomer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Customers</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="customer_id" class="form-label ">Customer Id</label>
+                <input type="text" id="customer_id" class="form-control" placeholder="enter id" aria-label="Customer_Id">
+
+                <label for="customer_name" class="form-label ">Customer Name</label>
+                <input type="text" id="customer_name" class="form-control" placeholder="enter name" aria-label="customer_Name">
+
+                <label for="city" class="form-label ">City</label>
+                <input type="text" id="city" class="form-control" placeholder="enter your city" aria-label="city">
+
+                <label for="telephone" class="form-label ">Telephone</label>
+                <input type="text" id="telephone" class="form-control" placeholder="enter your number" aria-label="telephone">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
