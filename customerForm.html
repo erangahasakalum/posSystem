@@ -52,10 +52,10 @@
                         data-bs-target="#savecustomer" type="button">Save
                 </button>
                 <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor"
-                        data-bs-toggle="modal" data-bs-target="#updateModal" type="button">Update
+                        data-bs-toggle="modal" data-bs-target="#updatecustomer" type="button">Update
                 </button>
                 <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor"
-                        data-bs-toggle="modal" data-bs-target="#removeModal" type="button">Delete
+                        data-bs-toggle="modal" data-bs-target="#deletecustomer" type="button">Delete
                 </button>
             </div>
         </div>
@@ -158,6 +158,59 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--update Customers modal-->
+<div class="modal" tabindex="-1" id="updatecustomer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Customers</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="c_id" class="form-label ">Customer Id</label>
+                <input type="text" id="c_id" class="form-control" placeholder="enter id" aria-label="Customer_Id">
+
+                <label for="c_name" class="form-label ">Customer Name</label>
+                <input type="text" id="c_name" class="form-control" placeholder="enter name" aria-label="customer_Name">
+
+                <label for="c_city" class="form-label ">City</label>
+                <input type="text" id="c_city" class="form-control" placeholder="enter your city" aria-label="city">
+
+                <label for="c_telephone" class="form-label ">Telephone</label>
+                <input type="text" id="c_telephone" class="form-control" placeholder="enter your number" aria-label="telephone">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Update </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--delete Customers modal-->
+<div class="modal" tabindex="-1" id="deletecustomer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Customers</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="id" class="form-label ">Customer Id</label>
+                <input type="text" id="id" class="form-control" placeholder="enter id" aria-label="Customer_Id">
+
+                <label for="name" class="form-label ">Customer Name</label>
+                <input type="text" id="name" class="form-control" placeholder="enter name" aria-label="customer_Name">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Delete </button>
             </div>
         </div>
     </div>
