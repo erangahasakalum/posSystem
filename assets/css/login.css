@@ -1,0 +1,60 @@
+#imageParent {
+    width: 50vw;
+    height: 100vh;
+}
+
+.loginImage {
+    width: 50vw;
+    height: 100vh;
+    margin-bottom: 0;
+}
+
+#head {
+    -webkit-text-fill-color: black;
+    font-weight: bold;
+
+    position: relative;
+    bottom: 550px;
+    left: 60rem;
+
+}
+
+#position{
+    position: absolute;
+    bottom: 150px;
+    left: 47rem;
+}
+
+#signUpParent{
+    position: absolute;
+    top: -12rem;
+    left: 31rem;
+}
+
+#forgetPassword{
+    position: absolute;
+    left: 28rem;
+}
+
+#labelForgetPassword{
+    -webkit-text-fill-color: black;
+}
+
+
+#loginBtnParent{
+    position: absolute;
+    left: 12rem;
+    bottom: -4rem;
+}
+
+
+#loginBtn{
+    background-color: #03A100;
+    -webkit-text-fill-color: white;
+    width: 150px;
+    border: 0;
+    font: 20px Raleway;
+}
+
+
+
