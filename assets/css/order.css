@@ -2,3 +2,14 @@
     width: 40px;
     height: 40px;
 }
+
+#navMenu a{
+    font-family: "Arial Black", serif;
+
+}
+
+#logo{
+    position: relative;
+    left: 10px;
+    bottom:10px;
+}

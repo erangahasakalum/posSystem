@@ -9,32 +9,28 @@
 
 </head>
 <body>
-<header id="header">
-    <nav class="navbar shadow p-1 mb-5 bg-body-tertiary rounded padding" style="background-color: #ffffff;">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <div class="logo">
-                    <img src="assets/img/dashBoardLogo.png" id="logo">
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<header >
+    <nav class="navbar navbar-expand-lg navbar navbar navbar-light" style="background: #008DDA">
+        <a class="navbar-brand " href="#" id="logo">
+            <img src="assets/img/cart.png" width="50" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse headerPosition" id="navbarNavAltMarkup">
-                    <div class="navbar-nav position container topBotomBordersIn">
-                        <a class="nav-link active" aria-current="page" href="dashboardForm.html">Dashboard </a>
-                        <a class="nav-link active" href="customerForm.html">Customer</a>
-                        <a class="nav-link active" href="itemForm.html">Item</a>
-                        <a class="nav-link active" href="orderForm.html">Place Order</a>
-                        <a class="nav-link active" href="login.html">Log Out</a>
-                </div>
-            </div>
-        </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto " id="navMenu">
+                <a class="nav-link active" aria-current="page" href="dashboardForm.html">Dashboard </a>
+                <a class="nav-link active" href="customerForm.html">Customer</a>
+                <a class="nav-link active" href="itemForm.html">Item</a>
+                <a class="nav-link active" href="orderForm.html">Place Order</a>
+                <a class="nav-link active" href="login.html">Log Out</a>
+            </ul>
+        </div>
     </nav>
 </header>
-<section>
+<section class="container mt-5">
     <div>
         <div class="container-fluid searchBarParent">
             <div id="searchBar" class="input-group mb-3">
@@ -46,28 +42,31 @@
 
         <div id="crudButton" class="relativePosition">
             <div class="absolutePosition">
-                <button class="noBorder btn btn-outline-secondary newButton whiteTextColor" data-bs-toggle="modal"
+                <button id="btnSave" class="noBorder btn btn-outline-secondary newButton whiteTextColor"
+                        data-bs-toggle="modal"
                         data-bs-target="#saveitems" type="button">Save
                 </button>
-                <button class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor"
+                <button id="btnUpdate"
+                        class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor"
                         data-bs-toggle="modal" data-bs-target="#updateitems" type="button">Update
                 </button>
-                <button class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor"
+                <button id="btnDelete" class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor"
                         data-bs-toggle="modal" data-bs-target="#deleteitems" type="button">Delete
                 </button>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
         <div id="d1" class="row margin col-sm-4 col-xs">
-            <h4 class="viewCustomerTitle">View Items</h4>
+            <h6 class="viewCustomerTitle">View Items</h6>
         </div>
     </div>
-    <div class="tableDiv customerTable">
+
+    <div class="itemTable">
         <table class="table">
             <thead>
-            <tr>
+            <tr class="table-info">
                 <th class="OrderTableHead " scope="col">Item_Id</th>
                 <th class="OrderTableHead" scope="col">Item_name</th>
                 <th class="OrderTableHead" scope="col">Quantity</th>
@@ -149,7 +148,8 @@
                        aria-label="item_name">
 
                 <label for="quantity" class="form-label ">Quanity</label>
-                <input type="text" id="quantity" class="form-control" placeholder="enter quantity" aria-label="quantity">
+                <input type="text" id="quantity" class="form-control" placeholder="enter quantity"
+                       aria-label="quantity">
 
                 <label for="price" class="form-label ">Price</label>
                 <input type="text" id="price" class="form-control" placeholder="enter price"
@@ -179,7 +179,8 @@
                 <input type="text" id="i_name" class="form-control" placeholder="enter name" aria-label="item_name">
 
                 <label for="i_quanity" class="form-label ">Quantity</label>
-                <input type="text" id="i_quanity" class="form-control" placeholder="enter quantity" aria-label="quantity">
+                <input type="text" id="i_quanity" class="form-control" placeholder="enter quantity"
+                       aria-label="quantity">
 
                 <label for="i_price" class="form-label ">Price</label>
                 <input type="text" id="i_price" class="form-control" placeholder="enter price"

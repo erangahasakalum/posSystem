@@ -1,60 +1,43 @@
-#imageParent {
-    width: 50vw;
-    height: 100vh;
+.shadow-card {
+    box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 7px
 }
-
-.loginImage {
-    width: 50vw;
-    height: 100vh;
-    margin-bottom: 0;
-}
-
-#head {
-    -webkit-text-fill-color: black;
+.welcome{
+    color: black;
+    font-size: 28px;
     font-weight: bold;
-
-    position: relative;
-    bottom: 550px;
-    left: 60rem;
-
+}
+.GreenCart{
+    color: #008DDA;
+    font-weight: bold;
+    font-size: 30px;
+}
+#main{
+    margin-top: 100px;
+    width: 30vw;
+    height: 70vh;
+    border-radius: 15px;
 }
 
-#position{
-    position: absolute;
-    bottom: 150px;
-    left: 47rem;
+.userName{
+    width: 22vw;
 }
-
-#signUpParent{
-    position: absolute;
-    top: -12rem;
-    left: 31rem;
-}
-
-#forgetPassword{
-    position: absolute;
-    left: 28rem;
-}
-
-#labelForgetPassword{
-    -webkit-text-fill-color: black;
+.password{
+    width: 22vw;
 }
 
 
-#loginBtnParent{
-    position: absolute;
-    left: 12rem;
-    bottom: -4rem;
+.signIn{
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size: 20px;
+    background: #1154BF;
 }
 
-
-#loginBtn{
-    background-color: #03A100;
-    -webkit-text-fill-color: white;
-    width: 150px;
-    border: 0;
-    font: 20px Raleway;
+.passwordHelp{
+    margin-left: 220px;
+    font-weight: bold;
 }
 
-
-
+.noAcc{
+    margin-top: 50px;
+}
