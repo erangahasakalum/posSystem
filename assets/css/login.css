@@ -11,7 +11,7 @@
     font-weight: bold;
     font-size: 30px;
 }
-#main{
+#sign-up-form {
     margin-top: 100px;
     width: 30vw;
     height: 70vh;
@@ -39,5 +39,5 @@
 }
 
 .noAcc{
-    margin-top: 50px;
+    margin-top: 70px;
 }

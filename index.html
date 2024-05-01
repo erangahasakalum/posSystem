@@ -14,7 +14,7 @@
 </head>
 <body>
 <!--    nav section-->
-<header>
+<header id="header">
     <nav class="navbar navbar-expand-lg navbar navbar navbar-light" style="background: #008DDA">
         <a class="navbar-brand " href="#" id="logo">
             <img src="assets/img/cart.png" width="50" height="50" alt="">
@@ -26,33 +26,34 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto " id="navMenu">
-                <span class="nav-link " aria-current="page" id="dashboadClick">Dashboard </span>
-                <span class="nav-link " >Customer</span>
-                <span class="nav-link " >Item</span>
-                <span class="nav-link " >Place Order</span>
-                <span class="nav-link " >Log Out</span>
+                <span class="nav-link " aria-current="page" id="dashboard-click">Dashboard </span>
+                <span class="nav-link " id="customer-click">Customer</span>
+                <span class="nav-link " id="item-click">Item</span>
+                <span class="nav-link " id="order-click">Place Order</span>
+                <span class="nav-link " id="log-out-click">Log Out</span>
             </ul>
         </div>
     </nav>
 </header>
 
-<!--login page-->
-<div id="signUp" class="container-fluid  justify-content-center container shadow-card left-box "  >
+<!--sign-up page-->
+<section id="sign-up-form" class="container-fluid  justify-content-center container shadow-card left-box ">
     <span class="welcome">Welcome to the </span>
-    <span class="GreenCart" >GreenCart </span>
+    <span class="GreenCart">GreenCart </span>
     <h5>Hello! let's get started</h5>
-    <form id="signUpForm"  >
-        <div class="mb-3 mt-5 ms-3 me-3 userName justify-content-center " >
+    <form>
+        <div class="mb-3 mt-5 ms-3 me-3 userName justify-content-center ">
             <label for="InputUserName" class="form-label">Enter your username</label>
-            <input type="text" class="form-control " id="InputUserName" aria-describedby="passwordHelp" placeholder="username">
+            <input type="text" class="form-control " id="InputUserName" aria-describedby="passwordHelp"
+                   placeholder="username">
         </div>
-        <div  class="mb-3 ms-3 me-3 password justify-content-center" >
-            <label for="InputPassword1" class="form-label" >Enter your password </label>
+        <div class="mb-3 ms-3 me-3 password justify-content-center">
+            <label for="InputPassword1" class="form-label">Enter your password </label>
             <input type="password" class="form-control" id="InputPassword1" placeholder="password">
             <div class="form-text passwordHelp">Forget password?</div>
         </div>
         <div class="d-flex ">
-            <button  type="submit" class="btn btn-primary me-3 signIn">SIGN IN</button>
+            <button type="button" class="btn btn-primary me-3" id="sign-in-btn">SIGN IN</button>
         </div>
 
         <div class="noAcc">
@@ -60,32 +61,32 @@
             <a href="signUp.html">Create</a>
         </div>
     </form>
-</div>
+</section>
 
 <!--sign up page-->
 
-<div id="main" class="container-fluid  justify-content-center container shadow-card left-box "  >
+<div id="signup-form" class="container-fluid  justify-content-center container shadow-card left-box ">
     <span class="welcome">Welcome to the </span>
-    <span class="GreenCart" >Green Cart </span>
+    <span class="GreenCart">Green Cart </span>
     <h5>Sign Up Here</h5>
-    <form id="form"  >
-        <div class="mb-3 mt-5 ms-3 me-3 userName justify-content-center " >
+    <form id="form">
+        <div class="mb-3 mt-5 ms-3 me-3 userName justify-content-center ">
             <label for="InputUserName" class="form-label">Enter your username</label>
             <input type="text" class="form-control " id="userNameSignUp" aria-describedby="passwordHelp">
         </div>
-        <div  class="mb-3 ms-3 me-3 password justify-content-center" >
+        <div class="mb-3 ms-3 me-3 password justify-content-center">
             <label for="InputPassword1" class="form-label">Enter your password </label>
             <input type="password" class="form-control" id="signUpPassword">
 
         </div>
         <div class="d-flex ">
-            <button  type="submit" class="btn btn-primary me-3 signIn">SIGN UP</button>
+            <button type="submit" class="btn btn-primary me-3 signIn">SIGN UP</button>
         </div>
     </form>
 </div>
 
 <!--dashboard form-->
-<section class="container mt-5">
+<section class="container mt-5" id="dashboard-form">
     <section class="row  d-flex align-items-center justify-content-center  " style="text-align: center" id="cards">
         <div class="card text-bg-primary mb-3 " style="max-width: 15rem; " id="card1">
             <div class="card-header">Total Customers</div>
@@ -113,15 +114,15 @@
     </section>
 
     <div class=" searchBarParent col-4 ml-1" id="searchOrder">
-        <div id="searchBar" class="input-group mb-3">
-            <input id="searchInputField" type="text" class="form-control" placeholder="Search orders"
+        <div id="search-bar" class="input-group mb-3">
+            <input id="search-inputfield" type="text" class="form-control" placeholder="Search orders"
                    aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
+            <button class="btn btn-outline-secondary searchBtn" type="button" id="button-add">Search</button>
         </div>
     </div>
 
     <div class="dashBordTable">
-        <table class="table" >
+        <table class="table">
             <thead>
             <tr class="table-info">
                 <th scope="col">Order_id</th>
@@ -182,17 +183,17 @@
 </section>
 
 <!--customer form-->
-<section class="container mt-5">
+<section class="container mt-5" id="customer-form">
     <div>
         <div class=" searchBarParent">
-            <div id="searchBar" class="input-group mb-3">
-                <input id="searchInputField" type="text" class="form-control" placeholder="Search Customer"
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search Customer"
                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">Search</button>
+                <button class="btn btn-outline-secondary searchBtn" type="button">Search</button>
             </div>
         </div>
 
-        <div id="crudButton" class="relativePosition">
+        <div id="btn" class="relativePosition">
             <div class="absolutePosition">
                 <button id="saveBtn" class="noBorder btn btn-outline-secondary newButton whiteTextColor"
                         data-bs-toggle="modal"
@@ -210,7 +211,7 @@
     </div>
 
     <div class="row mt-4">
-        <div id="d1" class="row margin col-sm-4 col-xs">
+        <div class="row margin col-sm-4 col-xs">
             <h4 class="viewCustomerTitle">View Customers</h4>
         </div>
     </div>
@@ -225,7 +226,7 @@
                 <th class="OrderTableHead" scope="col">City</th>
             </tr>
             </thead>
-            <tbody id="orderTable">
+            <tbody>
 
             <tr>
                 <th class="orderTableBody" scope="row">2</th>
@@ -347,10 +348,11 @@
             </div>
             <div class="modal-body">
                 <label for="id" class="form-label ">Customer Id</label>
-                <input type="text" id="id" class="form-control" placeholder="enter id" aria-label="Customer_Id">
+                <input type="text" id="delete-id" class="form-control" placeholder="enter id" aria-label="Customer_Id">
 
                 <label for="name" class="form-label ">Customer Name</label>
-                <input type="text" id="name" class="form-control" placeholder="enter name" aria-label="customer_Name">
+                <input type="text" id="delete-name" class="form-control" placeholder="enter name"
+                       aria-label="customer_Name">
 
             </div>
             <div class="modal-footer">
@@ -362,7 +364,7 @@
 </div>
 
 <!--item form-->
-<section class="container mt-5">
+<section class="container mt-5" id="item-form">
     <div>
         <div class="container-fluid searchBarParent">
             <div id="searchBar" class="input-group mb-3">
@@ -551,9 +553,9 @@
 </div>
 
 <!--order form-->
-<section id="order" style="margin-top: 30px" class="pb-5">
+<section id="order-form" style="margin-top: 30px" class="pb-5">
     <div class="d-flex justify-content-end mt-3 me-3">
-        <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#myModal">All Orders</button>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">All Orders</button>
     </div>
 
     <div class="row mt-3">
@@ -773,7 +775,7 @@
                             <th>Item Code</th>
                             <th>Item Name</th>
                             <th>Qty</th>
-                            <th>Total </th>
+                            <th>Total</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -806,10 +808,12 @@
     </div>
 </section>
 
+
 <script src="assets/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-<script src="assets/main.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
