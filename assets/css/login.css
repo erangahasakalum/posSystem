@@ -34,10 +34,15 @@
 }
 
 .passwordHelp{
-    margin-left: 220px;
     font-weight: bold;
 }
 
 .noAcc{
     margin-top: 50px;
 }
+
+.form-text-passwordHelp{
+    text-decoration: none;
+    margin-left: 55%;
+}
+
