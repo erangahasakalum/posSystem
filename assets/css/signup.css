@@ -1,0 +1,42 @@
+.shadow-card {
+    box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 7px
+}
+.welcome{
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+}
+.GreenCart{
+    color: #ff253a;
+    font-weight: bold;
+    font-size: 30px;
+}
+#sign-up-form{
+    margin-top: 100px;
+    width: 30vw;
+    height: 70vh;
+    border-radius: 15px;
+}
+
+.userName{
+    width: 22vw;
+}
+.password{
+    width: 22vw;
+}
+
+
+.sign-up{
+    font-size: 20px;
+    background: #1154BF;
+}
+
+#back-btn{
+
+    font-size: 20px;
+    background: #ff253a;
+
+}
+
+
+
