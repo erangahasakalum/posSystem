@@ -1,6 +1,11 @@
-.shadow-card {
-    box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 7px
-}
+#sign-up-form {
+    margin-top: 100px;
+    width: 30vw;
+    height: 70vh;
+    border-radius: 15px;
+}.shadow-card {
+     box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 7px
+ }
 .welcome{
     color: black;
     font-size: 28px;
@@ -11,7 +16,7 @@
     font-weight: bold;
     font-size: 30px;
 }
-#sign-in-form {
+#sign-up-form {
     margin-top: 100px;
     width: 30vw;
     height: 70vh;
@@ -26,7 +31,7 @@
 }
 
 
-.sign-up{
+.signIn{
     margin-top: 40px;
     margin-left: 20px;
     font-size: 20px;
@@ -36,8 +41,4 @@
 .passwordHelp{
     margin-left: 220px;
     font-weight: bold;
-}
-
-.noAcc{
-    margin-top: 70px;
 }
