@@ -18,7 +18,11 @@ $("#header").css({
     display:'none'
 })
 
-$("#signup-form").css({
+$("#sign-up-form ").css({
+    display:'none'
+})
+
+$('#forget-password-form').css({
     display:'none'
 })
 
@@ -135,6 +139,28 @@ $("#log-out-click").on('click',()=>{
         display:'none'
     })
 
+})
+
+$("#create-account").on('click',()=>{
+    $("#sign-up-form ").css({
+        display:'block'
+    })
+
+    $("#sign-in-form").css({
+        display:'none'
+    })
+
+
+})
+
+$("#back-btn").on('click',()=>{
+    $("#sign-in-form").css({
+        display:'block'
+    })
+
+    $("#sign-up-form ").css({
+        display:'none'
+    })
 })
 
 

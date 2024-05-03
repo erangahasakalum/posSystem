@@ -3,7 +3,8 @@
     width: 30vw;
     height: 70vh;
     border-radius: 15px;
-}.shadow-card {
+}
+.shadow-card {
      box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 7px
  }
 .welcome{
@@ -31,14 +32,18 @@
 }
 
 
-.signIn{
+#sign-up-btn{
     margin-top: 40px;
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 15px;
     background: #1154BF;
 }
 
-.passwordHelp{
-    margin-left: 220px;
-    font-weight: bold;
+#back-btn{
+    margin-top: 40px;
+    margin-left: 36%;
+    font-size: 15px;
+    background: #1154BF;
 }
+
+
