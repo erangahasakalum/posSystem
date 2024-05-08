@@ -1,5 +1,6 @@
-// customer array
-var customerAr =[];
+import Customer from "../../model/customer.model.js";
+import {customerar} from "../../db/db.js";
+
 
 // save customer
 $("#customer-save").on('click',()=>{
@@ -10,8 +11,7 @@ $("#customer-save").on('click',()=>{
 
     let customerObj = new Customer(customer_id,customer_name,city,telephone);
 
-    // customerObj push array
-   // customerAr.push(customerObj);
+    customerar.push(customerObj);
     console.log(customerObj.id);
 
 });
