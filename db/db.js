@@ -1,1 +1,1 @@
-export var customerar = [];
+export var customerArray = [];
