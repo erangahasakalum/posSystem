@@ -1,13 +1,12 @@
 export default class CustomerModel{
     constructor(customer_id,customer_name,city,telephone) {
-        this.id =customer_id;
-        this.name = customer_name;
         this._customer_id = customer_id;
         this._customer_name = customer_name;
         this._city = city;
         this._telephone = telephone;
 
     }
+
 
     get customer_id() {
         return this._customer_id;
