@@ -16,13 +16,14 @@ $("#item-save").on('click', () =>{
     );
 
     itemArray.push(itemObj);
+    console.log(itemObj)
     loadItemTable();
 })
 
 function loadItemTable() {
-    $("item-table").empty();
+    $("#item-table").empty();
 
-    itemArray.map((item,) => {
+    itemArray.map((item) => {
 
         let itemRecode = `<tr>
             <td>${item.item_id}</td>
