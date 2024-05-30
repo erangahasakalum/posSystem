@@ -1,7 +1,3 @@
-$("#dashboard-form").css({
-    display:'none'
-})
-
 $("#customer-form").css({
     display: 'none'
 })
@@ -15,29 +11,15 @@ $("#order-form").css({
 })
 
 $("#header").css({
-    display:'none'
+    display:'block'
+})
+$("#dashboard-form").css({
+    display:'block'
 })
 
-$("#sign-up-form ").css({
-    display:'none'
-})
 
 $('#forget-password-form').css({
     display:'none'
-})
-
-
-
-$('#sign-in-btn').on('click', () => {
-    $("#header").css({
-        display:'block'
-    })
-    $("#dashboard-form").css({
-        display:'block'
-    })
-    $("#sign-in-form").css({
-        display:'none'
-    })
 })
 
 $('#dashboard-click').on('click', () => {
@@ -141,26 +123,5 @@ $("#log-out-click").on('click',()=>{
 
 })
 
-$("#create-account").on('click',()=>{
-    $("#sign-up-form ").css({
-        display:'block'
-    })
-
-    $("#sign-in-form").css({
-        display:'none'
-    })
-
-
-})
-
-$("#back-btn").on('click',()=>{
-    $("#sign-in-form").css({
-        display:'block'
-    })
-
-    $("#sign-up-form ").css({
-        display:'none'
-    })
-})
 
 

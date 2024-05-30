@@ -37,81 +37,6 @@
         </div>
     </nav>
 </header>
-
-<!--sign-in page-->
-<section id="sign-in-form" class="container-fluid  justify-content-center container shadow-card left-box ">
-    <span class="welcome">Welcome to the </span>
-    <span class="GreenCart">GreenCart </span>
-    <h5>Hello! let's get started</h5>
-    <form>
-        <div class="mb-3 mt-5 ms-3 me-3 userName justify-content-center ">
-            <label for="InputUserName" class="form-label">Enter your username</label>
-            <input type="text" class="form-control " id="InputUserName" aria-describedby="passwordHelp"
-                   placeholder="username">
-        </div>
-        <div class="mb-3 ms-3 me-3 password justify-content-center">
-            <label for="InputPassword1" class="form-label">Enter your password </label>
-            <input type="password" class="form-control" id="InputPassword1" placeholder="password">
-            <a class="form-text " id="passwordHelp" href="forgetPassword.index.html">Forget password?</a>
-        </div>
-        <div class="d-flex ">
-            <button type="button" class="btn btn-primary me-3" id="sign-in-btn">SIGN IN</button>
-        </div>
-
-        <div class="noAcc">
-            <span>Don't have an account?</span>
-            <span id="create-account">Create</span>
-        </div>
-    </form>
-</section>
-
-<!--sign up page-->
-
-<div id="sign-up-form" class="container-fluid  justify-content-center container shadow-card left-box ">
-    <span class="welcome">Welcome to the </span>
-    <span class="GreenCart">Green Cart </span>
-    <h5>Sign Up Here</h5>
-    <form id="form">
-        <div class="mb-3 mt-5 ms-3 me-3 userName justify-content-center ">
-            <label for="InputUserName" class="form-label">Enter your username</label>
-            <input type="text" class="form-control " id="userNameSignUp" aria-describedby="passwordHelp">
-        </div>
-        <div class="mb-3 ms-3 me-3 password justify-content-center">
-            <label for="InputPassword1" class="form-label">Enter your password </label>
-            <input type="password" class="form-control" id="signUpPassword">
-
-        </div>
-        <div class="d-flex ">
-            <button type="button" class="btn btn-primary me-3 signIn" id="back-btn">BACK</button>
-            <button type="button" class="btn btn-primary me-3 signIn" id="sign-up-btn">SIGN UP</button>
-        </div>
-    </form>
-</div>
-
-<!--forget password form-->
-
-<div id="forget-password-form" class="container-fluid  justify-content-center container shadow-card left-box "  >
-    <span class="welcome">Welcome to the </span>
-    <span class="GreenCart" >GreenCart </span>
-    <h5>Forget Password</h5>
-    <form id="form1"  >
-        <div class="mb-3 mt-5 ms-3 me-3 userName justify-content-center " >
-            <label for="InputUserName" class="form-label">Enter your username</label>
-            <input type="text" class="form-control " id="UserName" aria-describedby="passwordHelp" placeholder="username">
-        </div>
-        <div  class="mb-3 ms-3 me-3 password justify-content-center" >
-            <label for="InputPassword1" class="form-label" >Enter your password </label>
-            <input type="password" class="form-control" id="Password1" placeholder="password">
-
-        </div>
-        <div class="d-flex ">
-            <button  type="button" class="btn btn-primary me-3 " id="back">BACK</button>
-            <button  type="button" class="btn btn-primary me-3 " id="create">CREATE</button>
-        </div>
-
-    </form>
-</div>
-
 <!--dashboard form-->
 <section class="container mt-5" id="dashboard-form">
     <section class="row  d-flex align-items-center justify-content-center  " style="text-align: center" id="cards">
@@ -247,13 +172,13 @@
         <table class="table">
             <thead class="tableHead">
             <tr class="table-info">
-                <th class="OrderTableHead " scope="col">Customer_Id</th>
+                <th class="OrderTableHead" scope="col">Customer_Id</th>
                 <th class="OrderTableHead" scope="col">Customer_Name</th>
                 <th class="OrderTableHead" scope="col">Telephone</th>
                 <th class="OrderTableHead" scope="col">City</th>
             </tr>
             </thead>
-            <tbody id="customer-table">
+            <tbody id="customer-table-tbody">
 
             </tbody>
         </table>
@@ -316,7 +241,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" id="customer-update">Update</button>
             </div>
         </div>
     </div>
