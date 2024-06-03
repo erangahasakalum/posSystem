@@ -96,11 +96,6 @@ function clearUpdateFields() {
 function deleteCustomers() {
     customerArray.splice(recodeIndex,1);
     loadCustomer();
-    clearDeleteFields();
+
 }
 
-function clearDeleteFields() {
-    $('#delete-customer-modal.').css({
-        display:'none'
-    })
-}

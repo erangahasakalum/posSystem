@@ -13,30 +13,42 @@
     <link rel="stylesheet" href="assets/css/customer.css">
     <link rel="stylesheet" href="assets/css/signup.css">
     <link rel="stylesheet" href="assets/css/forgetPassword.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
-<!--    nav section-->
+<!--new nav section-->
 <header id="header">
-    <nav class="navbar navbar-expand-lg navbar navbar navbar-light" style="background: #008DDA">
-        <a class="navbar-brand " href="#" id="logo">
-            <img src="assets/img/cart.png" width="50" height="50" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">FreshMart</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link " aria-current="page" id="dashboard-click">Dashboard </span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link " id="customer-click">Customer</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link " id="item-click">Item</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link " id="order-click">Place Order</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link " id="log-out-click">Log Out</span>
+                    </li>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto " id="navMenu">
-                <span class="nav-link " aria-current="page" id="dashboard-click">Dashboard </span>
-                <span class="nav-link " id="customer-click">Customer</span>
-                <span class="nav-link " id="item-click">Item</span>
-                <span class="nav-link " id="order-click">Place Order</span>
-                <span class="nav-link " id="log-out-click">Log Out</span>
-            </ul>
+
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
+
 <!--dashboard form-->
 <section class="container mt-5" id="dashboard-form">
     <section class="row  d-flex align-items-center justify-content-center  " style="text-align: center" id="cards">
@@ -149,14 +161,14 @@
             <div class="absolutePosition">
                 <button id="saveBtn" class="noBorder btn btn-outline-secondary newButton whiteTextColor"
                         data-bs-toggle="modal"
-                        data-bs-target="#savecustomer" type="button">Save
+                        data-bs-target="#save-customer" type="button">Save
                 </button>
                 <button id="updateBtn"
                         class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor"
-                        data-bs-toggle="modal" data-bs-target="#updatecustomer" type="button">Update
+                        data-bs-toggle="modal" data-bs-target="#update-customer" type="button">Update
                 </button>
                 <button id="deleteBtn" class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor"
-                        data-bs-toggle="modal" data-bs-target="#deletecustomer" type="button">Delete
+                        data-bs-toggle="modal" data-bs-target="#delete-customer-modal" type="button">Delete
                 </button>
             </div>
         </div>
@@ -186,7 +198,7 @@
 </section>
 
 <!--save Customers modal-->
-<div class="modal" tabindex="-1" id="savecustomer">
+<div class="modal" tabindex="-1" id="save-customer">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -197,17 +209,22 @@
                 <label for="customer_id" class="form-label ">Customer Id</label>
                 <input type="text" id="customer_id" class="form-control" placeholder="enter id"
                        aria-label="Customer_Id">
+                <span id="error-id" class="alert">hi</span><br>
 
                 <label for="customer_name" class="form-label ">Customer Name</label>
                 <input type="text" id="customer_name" class="form-control" placeholder="enter name"
                        aria-label="customer_Name">
+                <span id="error-name" class="alert">hi</span><br>
 
                 <label for="city" class="form-label ">City</label>
                 <input type="text" id="city" class="form-control" placeholder="enter your city" aria-label="city">
+                <span id="error-city" class="alert">hi</span><br>
 
                 <label for="telephone" class="form-label ">Telephone</label>
                 <input type="text" id="telephone" class="form-control" placeholder="enter your number"
                        aria-label="telephone">
+                <span id="error-telephone" class="alert">hi</span><br>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -218,7 +235,7 @@
 </div>
 
 <!--update Customers modal-->
-<div class="modal" tabindex="-1" id="updatecustomer">
+<div class="modal" tabindex="-1" id="update-customer">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -228,16 +245,20 @@
             <div class="modal-body">
                 <label for="c_id" class="form-label ">Customer Id</label>
                 <input type="text" id="c_id" class="form-control" placeholder="enter id" aria-label="Customer_Id">
+                <span id="error-c-idU" class="alert">hi</span><br>
 
                 <label for="c_name" class="form-label ">Customer Name</label>
                 <input type="text" id="c_name" class="form-control" placeholder="enter name" aria-label="customer_Name">
+                <span id="error-c-nameU" class="alert">hi</span><br>
 
                 <label for="c_city" class="form-label ">City</label>
                 <input type="text" id="c_city" class="form-control" placeholder="enter your city" aria-label="city">
+                <span id="error-c-cityU" class="alert">hi</span><br>
 
                 <label for="c_telephone" class="form-label ">Telephone</label>
                 <input type="text" id="c_telephone" class="form-control" placeholder="enter your number"
                        aria-label="telephone">
+                <span id="error-c-telU" class="alert">hi</span><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -256,10 +277,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <label for="id" class="form-label ">Customer Id</label>
+                <label for="delete-id" class="form-label ">Customer Id</label>
                 <input type="text" id="delete-id" class="form-control" placeholder="enter id" aria-label="Customer_Id">
 
-                <label for="name" class="form-label ">Customer Name</label>
+                <label for="delete-name" class="form-label ">Customer Name</label>
                 <input type="text" id="delete-name" class="form-control" placeholder="enter name"
                        aria-label="customer_Name">
 
@@ -287,14 +308,14 @@
             <div class="absolutePosition">
                 <button id="btnSave" class="noBorder btn btn-outline-secondary newButton whiteTextColor"
                         data-bs-toggle="modal"
-                        data-bs-target="#saveitems" type="button">Save
+                        data-bs-target="#save-items" type="button">Save
                 </button>
                 <button id="btnUpdate"
                         class="noBorder btn-warning btn btn-outline-secondary updateButton whiteTextColor"
                         data-bs-toggle="modal" data-bs-target="#updateitems" type="button">Update
                 </button>
                 <button id="btnDelete" class="noBorder btn-danger btn btn-outline-secondary removeButton whiteTextColor"
-                        data-bs-toggle="modal" data-bs-target="#deleteitems" type="button">Delete
+                        data-bs-toggle="modal" data-bs-target="#delete-items" type="button">Delete
                 </button>
             </div>
         </div>
@@ -306,7 +327,7 @@
         </div>
     </div>
 
-    <div class="itemTable">
+    <div class="itemTable" id="item-table">
         <table class="table">
             <thead>
             <tr class="table-info">
@@ -316,7 +337,7 @@
                 <th class="OrderTableHead" scope="col">Unit_Price</th>
             </tr>
             </thead>
-            <tbody id="item-table">
+            <tbody id="item-table-tbody">
 
             </tbody>
         </table>
@@ -324,29 +345,33 @@
 </section>
 
 <!--save Items modal-->
-<div class="modal" tabindex="-1" id="saveitems">
+<div class="modal" tabindex="-1" id="save-items">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Add New Items</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="item-save-form">
                 <label for="item_id" class="form-label ">Item Id</label>
                 <input type="text" id="item_id" class="form-control" placeholder="enter id"
                        aria-label="item_id">
+                <span id="i-id-error" class="alert">hi</span><br>
 
                 <label for="item_name" class="form-label ">Item Name</label>
                 <input type="text" id="item_name" class="form-control" placeholder="enter name"
                        aria-label="item_name">
+                <span id="i-name-error" class="alert">hi</span><br>
 
                 <label for="quantity" class="form-label ">Quanity</label>
                 <input type="text" id="quantity" class="form-control" placeholder="enter quantity"
                        aria-label="quantity">
+                <span id="i-quantity-error" class="alert">hi</span><br>
 
                 <label for="price" class="form-label ">Price</label>
                 <input type="text" id="price" class="form-control" placeholder="enter price"
                        aria-label="price">
+                <span id="i-price-error" class="alert">hi</span><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -367,28 +392,32 @@
             <div class="modal-body">
                 <label for="i_id" class="form-label ">Item Id</label>
                 <input type="text" id="i_id" class="form-control" placeholder="enter id" aria-label="item_Id">
+                <span id="error-idU" class="alert">hi</span><br>
 
                 <label for="i_name" class="form-label ">Item Name</label>
                 <input type="text" id="i_name" class="form-control" placeholder="enter name" aria-label="item_name">
+                <span id="error-nameU" class="alert">hi</span><br>
 
-                <label for="i_quanity" class="form-label ">Quantity</label>
-                <input type="text" id="i_quanity" class="form-control" placeholder="enter quantity"
+                <label for="i_quantity" class="form-label ">Quantity</label>
+                <input type="text" id="i_quantity" class="form-control" placeholder="enter quantity"
                        aria-label="quantity">
+                <span id="error-quantityU" class="alert">hi</span><br>
 
                 <label for="i_price" class="form-label ">Price</label>
                 <input type="text" id="i_price" class="form-control" placeholder="enter price"
                        aria-label="price">
+                <span id="error-priceU" class="alert">hi</span><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary" id="update-item">Update</button>
             </div>
         </div>
     </div>
 </div>
 
 <!--delete Items modal-->
-<div class="modal" tabindex="-1" id="deleteitems">
+<div class="modal" tabindex="-1" id="delete-items">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -396,16 +425,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <label for="id" class="form-label ">Item Id</label>
-                <input type="text" id="id" class="form-control" placeholder="enter id" aria-label="item_id">
+                <label for="d-id" class="form-label ">Item Id</label>
+                <input type="text" id="d-id" class="form-control" placeholder="enter id" aria-label="item_id">
 
-                <label for="name" class="form-label ">Item Name</label>
-                <input type="text" id="name" class="form-control" placeholder="enter name" aria-label="item_name">
+                <label for="d-name" class="form-label ">Item Name</label>
+                <input type="text" id="d-name" class="form-control" placeholder="enter name" aria-label="item_name">
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Delete</button>
+                <button type="button" class="btn btn-primary" id="delete-item">Delete</button>
             </div>
         </div>
     </div>
@@ -525,14 +554,14 @@
                     <div class="row mt-3">
                         <div class="col-md-7">
                             <div class="form-group mb- cash">
-                                <label for="OrderID">Cash</label>
+                                <label for="cash">Cash</label>
                                 <input type="text" id="cash" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-md-5">
                             <div class="form-group mb- discount">
-                                <label for="date">Discount</label>
+                                <label for="discount">Discount</label>
                                 <input type="text" id="discount" class="form-control">
                             </div>
                         </div>
@@ -541,7 +570,7 @@
                     <div class="row">
                         <div class="col-md-7">
                             <div class="form-group mb- balance">
-                                <label for="customerId">Balance</label>
+                                <label for="balance">Balance</label>
                                 <input type="text" id="balance" class="form-control">
                             </div>
                         </div>
