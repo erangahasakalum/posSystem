@@ -5,6 +5,9 @@
     <title>Green cart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="assets/normalize_css/normalize.css">
     <link rel="stylesheet" href="assets/css/order.css">
     <link rel="stylesheet" href="assets/css/login.css">
@@ -49,6 +52,77 @@
     </nav>
 </header>
 
+<!--login form-->
+<section class="login">
+    <div class="login-area">
+        <div class="login-img">
+            <img src="assets/img/log.jpg" alt="">
+        </div>
+        <div class="login-form">
+            <h1>Login</h1>
+            <form>
+                <div class="t-box">
+                    <i class="fa fa-user"></i><input type="text" name="" placeholder="UserName">
+                </div>
+                <div class="t-box">
+                    <i class="fa fa-lock"></i><input type="text" name="" placeholder="Password">
+                </div>
+                <a id="forget-password-btn">Forget Password?</a>
+                <button class="login-btn" id="login-btn">Login</button>
+                <br>
+                <br>
+                <button class="login-btn" id="sign-btn">SignUp</button>
+                <!--<a class="sign-up">SignUp</a>-->
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--sign up form-->
+<section class="login" id="sign-up-form">
+    <div class="login-area">
+        <div class="login-img">
+            <img src="assets/img/log.jpg" alt="">
+        </div>
+        <div class="login-form">
+            <h1>SignUp</h1>
+            <form>
+                <div class="t-box">
+                    <i class="fa fa-user"></i><input type="text" name="" placeholder="UserName">
+                </div>
+                <div class="t-box">
+                    <i class="fa fa-lock"></i><input type="text" name="" placeholder="Password">
+                </div>
+               <!-- <a>Forget Password?</a>-->
+                <button class="login-btn">Login</button>
+                <a class="sign-up">SignIn</a>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--forget password-->
+    <section class="login" id="forget-password-form">
+    <div class="login-area">
+        <div class="login-img">
+            <img src="assets/img/log.jpg" alt="">
+        </div>
+        <div class="login-form">
+            <h1>Forget Password</h1>
+            <form>
+                <div class="t-box">
+                    <i class="fa fa-user"></i><input type="text" name="" placeholder="UserName">
+                </div>
+                <div class="t-box">
+                    <i class="fa fa-lock"></i><input type="text" name="" placeholder="Password">
+                </div>
+               <!-- <a>Forget Password?</a>-->
+                <button class="login-btn">Save</button>
+                <a class="sign-up">SignIn</a>
+            </form>
+        </div>
+    </div>
+</section>
 <!--dashboard form-->
 <section class="container mt-5" id="dashboard-form">
     <section class="row  d-flex align-items-center justify-content-center  " style="text-align: center" id="cards">
@@ -207,21 +281,21 @@
             </div>
             <div class="modal-body">
                 <label for="customer_id" class="form-label ">Customer Id</label>
-                <input type="text" id="customer_id" class="form-control" placeholder="enter id"
+                <input type="text" id="customer_id" class="form-control" placeholder="C00-001"
                        aria-label="Customer_Id">
                 <span id="error-id" class="alert">hi</span><br>
 
                 <label for="customer_name" class="form-label ">Customer Name</label>
-                <input type="text" id="customer_name" class="form-control" placeholder="enter name"
+                <input type="text" id="customer_name" class="form-control"
                        aria-label="customer_Name">
                 <span id="error-name" class="alert">hi</span><br>
 
                 <label for="city" class="form-label ">City</label>
-                <input type="text" id="city" class="form-control" placeholder="enter your city" aria-label="city">
+                <input type="text" id="city" class="form-control"  aria-label="city">
                 <span id="error-city" class="alert">hi</span><br>
 
                 <label for="telephone" class="form-label ">Telephone</label>
-                <input type="text" id="telephone" class="form-control" placeholder="enter your number"
+                <input type="text" id="telephone" class="form-control"
                        aria-label="telephone">
                 <span id="error-telephone" class="alert">hi</span><br>
 
@@ -354,24 +428,24 @@
             </div>
             <div class="modal-body" id="item-save-form">
                 <label for="item_id" class="form-label ">Item Id</label>
-                <input type="text" id="item_id" class="form-control" placeholder="enter id"
+                <input type="text" id="item_id"  class="form-control bd-colour" placeholder="C00-000"
                        aria-label="item_id">
-                <span id="i-id-error" class="alert">hi</span><br>
+                <span id="i-id-error" class="alert"></span><br>
 
                 <label for="item_name" class="form-label ">Item Name</label>
-                <input type="text" id="item_name" class="form-control" placeholder="enter name"
+                <input type="text" id="item_name" class="form-control bd-colour"
                        aria-label="item_name">
-                <span id="i-name-error" class="alert">hi</span><br>
+                <span id="i-name-error" class="alert"></span><br>
 
                 <label for="quantity" class="form-label ">Quanity</label>
-                <input type="text" id="quantity" class="form-control" placeholder="enter quantity"
+                <input type="text" id="quantity" class="form-control bd-colour"
                        aria-label="quantity">
-                <span id="i-quantity-error" class="alert">hi</span><br>
+                <span id="i-quantity-error" class="alert"></span><br>
 
                 <label for="price" class="form-label ">Price</label>
-                <input type="text" id="price" class="form-control" placeholder="enter price"
+                <input type="text" id="price" class="form-control bd-colour"
                        aria-label="price">
-                <span id="i-price-error" class="alert">hi</span><br>
+                <span id="i-price-error" class="alert"></span><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

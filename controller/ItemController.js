@@ -14,35 +14,68 @@ $('#delete-item').on('click', () => {
     deleteItem();
 })
 
-function focus() {
-    
-}
+
 function saveItem() {
     let iId = $('#item_id').val();
     let iName = $('#item_name').val();
     let iQuantity = $('#quantity').val();
     let iPrice = $('#price').val();
 
-    function ();
-
-    validation(iId,iName,iQuantity,iPrice);
-
-    let itemObj = new ItemModel(
-        iId,
-        iName,
-        iQuantity,
-        iPrice
-    );
-
-    itemArray.push(itemObj);
-    loadItem();
-    saveItemClearField()
+    if (validation(iId, iName, iQuantity, iPrice)) {
+        let itemObj = new ItemModel(iId, iName, iQuantity, iPrice);
+        itemArray.push(itemObj);
+        loadItem();
+        saveItemClearField();
+    }
 }
 
-function validation(id,name,quantity,price) {
+function validation(id, name, quantity, price) {
+    let isValid = true;
 
+    let idError = document.getElementById('i-id-error');
+    let nameError = document.getElementById('i-name-error');
+    let quantityError = document.getElementById('i-quantity-error');
+    let priceError = document.getElementById('i-price-error');
+
+    // Validate Item Id
+    if (!id.match(/^C00-\d{3}$/)) {
+        idError.style.display = 'inline';
+
+        idError.innerHTML = "Item Id format is incorrect";
+        isValid = false;
+    } else {
+        idError.style.display = 'none';
+    }
+
+    // Validate Item Name
+    if (name.trim() ==='') {
+        nameError.style.display = 'inline';
+        nameError.innerHTML = "Item Name is required";
+        isValid = false;
+    } else {
+        nameError.style.display = 'none';
+    }
+
+    // Validate Quantity
+    if (quantity.trim() === '' ||/1/) {
+        quantityError.style.display = 'inline';
+        quantityError.innerHTML = "Quantity is required";
+        isValid = false;
+    } else {
+        quantityError.style.display = 'none';
+    }
+
+    // Validate Price
+    if (price.trim() === '') {
+        priceError.style.display = 'inline';
+        priceError.innerHTML = "Price is required";
+        isValid = false;
+    } else {
+        priceError.style.display = 'none';
+    }
+
+    return isValid;
 }
-
 
 
 function loadItem() {
