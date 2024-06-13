@@ -1,5 +1,5 @@
 import ItemModel from "../model/ItemModel.js";
-import {itemArray} from "../db/db.js";
+import {customerArray, itemArray} from "../db/db.js";
 
 let recodeIndex;
 $("#item-save").on('click', () => {
@@ -21,62 +21,67 @@ function saveItem() {
     let iQuantity = $('#quantity').val();
     let iPrice = $('#price').val();
 
-    if (validation(iId, iName, iQuantity, iPrice)) {
-        let itemObj = new ItemModel(iId, iName, iQuantity, iPrice);
+    var regexId = /^I00-\d{3}$/;
+    var regexName = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
+    var regQuantity = /^\d+$/;
+    var regPrice = /^(Rs|₨)?\s?\d{1,9}(,\d{3})*(\.\d{2})?$/;
+
+
+    function isDuplicateId(id) {
+        return itemArray.some(item => item.item_id === id);
+    }
+
+    if (iId === "") {
+        document.getElementById('i-id-error').innerText = 'ID cannot be empty';
+    } else if (!regexId.test(iId)) {
+        document.getElementById('i-id-error').innerText = 'invalid ID';
+    } else if (isDuplicateId(iId)) {
+        document.getElementById('i-id-error').innerText = 'duplicate  ID';
+    } else {
+        document.getElementById('i-id-error').innerText = '';
+    }
+
+    if (iName === '') {
+        document.getElementById('i-name-error').innerText = 'Name cannot be empty';
+    } else if (!regexName.test(iName)) {
+        document.getElementById('i-name-error').innerText = 'invalid Name';
+    } else {
+        document.getElementById('i-name-error').innerText = '';
+    }
+
+    if (iQuantity === '') {
+        document.getElementById('i-quantity-error').innerText = 'Cannot be empty';
+    } else if (!regQuantity.test(iQuantity)) {
+        document.getElementById('i-quantity-error').innerText = 'invalid value';
+    } else {
+        document.getElementById('i-quantity-error').innerText = '';
+    }
+
+    if (iPrice === '') {
+        document.getElementById('i-price-error').innerText = "Cannot be empty";
+    } else if (!regPrice.test(iPrice)) {
+        document.getElementById('i-price-error').innerText = "invalid value"
+    } else {
+        document.getElementById('i-price-error').innerText = '';
+    }
+
+    if (
+        regexId.test(iId) && !isDuplicateId(iId) &&
+        regexName.test(iName) &&
+        regQuantity.test(iQuantity) &&
+        regPrice.test(iPrice)
+    ) {
+        let itemObj = new ItemModel(
+            iId,
+            iName,
+            iQuantity,
+            iPrice);
+
         itemArray.push(itemObj);
         loadItem();
-        saveItemClearField();
     }
+
 }
-
-function validation(id, name, quantity, price) {
-    let isValid = true;
-
-    let idError = document.getElementById('i-id-error');
-    let nameError = document.getElementById('i-name-error');
-    let quantityError = document.getElementById('i-quantity-error');
-    let priceError = document.getElementById('i-price-error');
-
-    // Validate Item Id
-    if (!id.match(/^C00-\d{3}$/)) {
-        idError.style.display = 'inline';
-
-        idError.innerHTML = "Item Id format is incorrect";
-        isValid = false;
-    } else {
-        idError.style.display = 'none';
-    }
-
-    // Validate Item Name
-    if (name.trim() ==='') {
-        nameError.style.display = 'inline';
-        nameError.innerHTML = "Item Name is required";
-        isValid = false;
-    } else {
-        nameError.style.display = 'none';
-    }
-
-    // Validate Quantity
-    if (quantity.trim() === '' ||/1/) {
-        quantityError.style.display = 'inline';
-        quantityError.innerHTML = "Quantity is required";
-        isValid = false;
-    } else {
-        quantityError.style.display = 'none';
-    }
-
-    // Validate Price
-    if (price.trim() === '') {
-        priceError.style.display = 'inline';
-        priceError.innerHTML = "Price is required";
-        isValid = false;
-    } else {
-        priceError.style.display = 'none';
-    }
-
-    return isValid;
-}
-
 
 function loadItem() {
     $('#item-table-tbody').empty();
@@ -125,14 +130,39 @@ function updateItem() {
     let iQuantity = $('#i_quantity').val();
     let iPrice = $('#i_price').val();
 
-    let itemArrayElement = itemArray[recodeIndex];
-    itemArrayElement.item_id = iId;
-    itemArrayElement.item_name = iName;
-    itemArrayElement.quantity = iQuantity;
-    itemArrayElement.price = iPrice;
+    var regexId = /^I00-\d{3}$/;
+    var regexName = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
+    var regQuantity = /^\d+$/;
+    var regPrice = /^(Rs|₨)?\s?\d{1,9}(,\d{3})*(\.\d{2})?$/;
 
-    loadItem();
-    clearUpdateField();
+
+    if (regexId.test(iId)) {
+        if (regexName.test(iName)) {
+            if (regQuantity.test(iQuantity)) {
+                if (regPrice.test(iPrice)) {
+
+                    let itemArrayElement = itemArray[recodeIndex];
+                    itemArrayElement.item_id = iId;
+                    itemArrayElement.item_name = iName;
+                    itemArrayElement.quantity = iQuantity;
+                    itemArrayElement.price = iPrice;
+
+                    loadItem();
+                    clearUpdateField();
+
+                } else {
+                    document.getElementById('error-priceU').innerText = 'invalid';
+                }
+            } else {
+                document.getElementById('error-quantityU').innerText = 'invalid ';
+            }
+        } else {
+            document.getElementById('error-nameU').innerText = 'invalid Name';
+        }
+    } else {
+        document.getElementById('error-idU').innerText = 'invalid ID';
+    }
+
 }
 
 function clearUpdateField() {

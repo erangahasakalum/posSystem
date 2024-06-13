@@ -1,4 +1,4 @@
-/*$("#customer-form").css({
+$("#customer-form").css({
     display: 'none'
 })
 
@@ -15,33 +15,59 @@ $("#header").css({
 })
 $("#dashboard-form").css({
     display:'none'
-})*/
+})
 
-/*
 $('#forget-password-form').css({
     display:'none'
 })
 
 $('#sign-up-form').css({
     display:'none'
-})*/
+})
 
 
 $('#login-btn').on('click',()=>{
-    console.log('clik log')
+    $("#header").css({
+        display:'block'
+    })
+    $("#dashboard-form").css({
+        display:'block'
+    })
+    $("#login-form").css({
+        display:'none'
+    })
 })
 
-$('#sign-btn').on('click',()=>{
-    console.log('click sign')
+$('#signUp-btn').on('click',()=>{
+    $('#login-form').css({
+        display:'none'
+    })
     $('#sign-up-form').css({
         display:'block'
     })
 })
 
+
 $('#forget-password-btn').on('click',()=>{
     $('#forget-password-form').css({
         display:'block'
     })
+
+    $('#login-form').css({
+        display:'none'
+    })
+
+})
+
+$('#sign-in-btn').on('click',()=>{
+    $('#sign-up-form').css({
+        display:'none'
+    })
+
+    $('#login-form').css({
+        display:'block'
+    })
+
 })
 
 $('#dashboard-click').on('click', () => {

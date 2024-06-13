@@ -2,40 +2,92 @@ import CustomerModel from "../model/CustomerModel.js";
 import {customerArray} from "../db/db.js";
 
 var recodeIndex;
-$('#customer-save').on('click',()=>{
-   saveCustomer();
+$('#customer-save').on('click', () => {
+    saveCustomer();
 })
 
-$('#customer-update').on('click',()=>{
+$('#customer-update').on('click', () => {
     updateCustomer();
 })
 
-$('#delete-customer').on('click',()=>{
+$('#delete-customer').on('click', () => {
     deleteCustomers();
 })
 
 function saveCustomer() {
-    let customer_id = $('#customer_id').val();
-    let customer_name = $('#customer_name').val();
-    let city = $('#city').val();
-    let telephone = $('#telephone').val();
+    let customer_id = $('#customer_id').val().trim();
+    let customer_name = $('#customer_name').val().trim();
+    let city = $('#city').val().trim();
+    let telephone = $('#telephone').val().trim();
 
-    let customerObj = new CustomerModel(
-        customer_id,
-        customer_name,
-        city,
-        telephone
-    );
+    var regexId = /^C00-\d{3}$/;
+    var regexName = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
+    var regexCity = /^[A-Za-z\s]+$/;
+    var regexContact = /^\d{10}$/;
 
-    customerArray.push(customerObj);
-    loadCustomer();
-    clearSaveFields();
+    function isDuplicateId(id) {
+        return customerArray.some(customer => customer.customer_id === id);
+    }
+
+    if (customer_id === "") {
+        document.getElementById("error-id").innerText = "ID cannot be empty";
+    } else if (!regexId.test(customer_id)) {
+        document.getElementById("error-id").innerText = "Invalid ID format";
+    } else if (isDuplicateId(customer_id)) {
+        document.getElementById("error-id").innerText = "Duplicate ID";
+    } else {
+        document.getElementById("error-id").innerText = "";
+    }
+
+    if (customer_name === "") {
+        document.getElementById("error-name").innerText = "Name cannot be empty";
+    } else if (!regexName.test(customer_name)) {
+        document.getElementById("error-name").innerText = "Invalid name format";
+    } else {
+        document.getElementById("error-name").innerText = "";
+    }
+
+    if (city === "") {
+        document.getElementById("error-city").innerText = "City cannot be empty";
+    } else if (!regexCity.test(city)) {
+        document.getElementById("error-city").innerText = "Invalid city format";
+    } else {
+        document.getElementById("error-city").innerText = "";
+    }
+
+    if (telephone === "") {
+        document.getElementById("error-telephone").innerText = "Telephone cannot be empty";
+    } else if (!regexContact.test(telephone)) {
+        document.getElementById("error-telephone").innerText = "Invalid telephone number";
+    } else {
+        document.getElementById("error-telephone").innerText = "";
+    }
+
+    if (
+        regexId.test(customer_id) && !isDuplicateId(customer_id) &&
+        regexName.test(customer_name) &&
+        regexCity.test(city) &&
+        regexContact.test(telephone)
+    ) {
+        let customerObj = new CustomerModel(
+            customer_id,
+            customer_name,
+            city,
+            telephone
+        );
+
+        customerArray.push(customerObj);
+        loadCustomer();
+        clearSaveFields();
+    }
 }
 
-function loadCustomer(){
+
+
+function loadCustomer() {
     $('#customer-table-tbody').empty();
 
-    customerArray.map((item)=>{
+    customerArray.map((item) => {
         let customerRecodes = `<tr> 
             <td class="c-id">${item.customer_id}</td>
             <td class="c-name">${item.customer_name}</td>
@@ -46,11 +98,11 @@ function loadCustomer(){
     })
 }
 
-$('#customer-table').on('click','tr',function (){
+$('#customer-table').on('click', 'tr', function () {
     let idC = $(this).find('.c-id').text();
-    let nameC =$(this).find('.c-name').text();
-    let cityC =$(this).find('.c-city').text();
-    let telephoneC =$(this).find('.c-telephone').text();
+    let nameC = $(this).find('.c-name').text();
+    let cityC = $(this).find('.c-city').text();
+    let telephoneC = $(this).find('.c-telephone').text();
 
     recodeIndex = $(this).index();
 
@@ -69,17 +121,40 @@ function updateCustomer() {
     let cityU = $('#c_city').val();
     let telephoneU = $('#c_telephone').val();
 
-    let customerArrayElement = customerArray[recodeIndex];
-    customerArrayElement.customer_id =idU;
-    customerArrayElement.customer_name =nameU;
-    customerArrayElement.city =cityU;
-    customerArrayElement.telephone =telephoneU;
+    var regexId = /^C00-\d{3}$/;
+    var regexName = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
+    var regexCity = /^[A-Za-z\s]+$/;
+    var regexContact = /^\d{10}$/;
 
-    loadCustomer();
-    clearUpdateFields();
+
+    if (regexId.test(idU)) {
+        if (regexName.test(nameU)) {
+            if (regexCity.test(cityU)) {
+                if (regexContact.test(telephoneU)) {
+                    let customerArrayElement = customerArray[recodeIndex];
+                    customerArrayElement.customer_id = idU;
+                    customerArrayElement.customer_name = nameU;
+                    customerArrayElement.city = cityU;
+                    customerArrayElement.telephone = telephoneU;
+
+                    loadCustomer();
+                    clearUpdateFields();
+                } else {
+                    document.getElementById("error-c-telU").innerText = "Invalid telephone number";
+                }
+            } else {
+                document.getElementById("error-c-cityU").innerText = "Invalid city";
+            }
+        } else {
+            document.getElementById("error-c-nameU").innerText = "Invalid name";
+        }
+    } else {
+        document.getElementById("error-c-idU").innerText = "Invalid ID";
+    }
+
 }
 
-function clearSaveFields(){
+function clearSaveFields() {
     $('#customer_id').val('');
     $('#customer_name').val('');
     $('#city').val('');
@@ -94,8 +169,12 @@ function clearUpdateFields() {
 }
 
 function deleteCustomers() {
-    customerArray.splice(recodeIndex,1);
+    customerArray.splice(recodeIndex, 1);
     loadCustomer();
 
 }
+
+$('#close-customer-save').on('click', () => {
+    clearSaveFields()
+})
 
