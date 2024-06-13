@@ -15,10 +15,10 @@ $('#delete-customer').on('click', () => {
 })
 
 function saveCustomer() {
-    let customer_id = $('#customer_id').val().trim();
-    let customer_name = $('#customer_name').val().trim();
-    let city = $('#city').val().trim();
-    let telephone = $('#telephone').val().trim();
+    let customer_id = $('#customer_id').val();
+    let customer_name = $('#customer_name').val();
+    let city = $('#city').val();
+    let telephone = $('#telephone').val();
 
     var regexId = /^C00-\d{3}$/;
     var regexName = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
