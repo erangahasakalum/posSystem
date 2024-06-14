@@ -25,7 +25,7 @@ $('#sign-up-form').css({
     display:'none'
 })
 
-
+/*
 $('#login-btn').on('click',()=>{
     $("#header").css({
         display:'block'
@@ -36,7 +36,7 @@ $('#login-btn').on('click',()=>{
     $("#login-form").css({
         display:'none'
     })
-})
+})*/
 
 $('#signUp-btn').on('click',()=>{
     $('#login-form').css({
