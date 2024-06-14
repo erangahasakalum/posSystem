@@ -78,7 +78,7 @@ function saveItem() {
             iPrice);
 
         itemArray.push(itemObj);
-        loadItem();
+        loadItem()
     }
 
 }
