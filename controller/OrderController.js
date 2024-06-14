@@ -1,8 +1,8 @@
-import {orderArray,itemArray,customerArray} from "../db/db.js";
+import {orderArray, itemArray, customerArray} from "../db/db.js";
 import OrderModel from "../model/OrderModel.js";
 
 
-$('#add-to-cart').on('click',()=>{
+$('#add-to-cart').on('click', () => {
     addToCart();
 })
 
@@ -21,10 +21,10 @@ function addToCart() {
     let price = $('#t-price').val();
     let discount = $('#t-discount').val();
 
-    let cash =+ orderQty * price
+    let cash = +orderQty * price
     $('#cash').val(cash);
 
-    let dis =+ cash * discount/100;
+    let dis = +cash * discount / 100;
     $('#discount').val(dis);
     let balance = cash - dis;
     $('#balance').val(balance);
@@ -32,17 +32,17 @@ function addToCart() {
     $('#total-discount').text(dis);
     $('#net-total').text(balance);
 
-    let orderDetails = new OrderModel(oId,date,customerId,customerName,city,mobile,itemCode,qtyOnHand,itemName,orderQty,dis,balance);
+    let orderDetails = new OrderModel(oId, date, customerId, customerName, city, mobile, itemCode, qtyOnHand, itemName, orderQty, dis, balance);
     orderArray.push(orderDetails);
     loadTable();
 }
 
-$('#item-code').change(function() {
+$('#item-code').change(function () {
     // Get the selected value using val()
     var selectedValue = $(this).val();
 
-    itemArray.map(function (store){
-        if (selectedValue === store.item_id){
+    itemArray.map(function (store) {
+        if (selectedValue === store.item_id) {
             $('#item-name').val(store.item_name);
             $('#item-qty-on-hand').val(store.quantity);
             $('#t-price').val(store.price);
@@ -50,12 +50,12 @@ $('#item-code').change(function() {
     })
 });
 
-$('#customer-idO').change(function() {
+$('#customer-idO').change(function () {
     // Get the selected value using val()
     var selectedValue = $(this).val();
 
-    customerArray.map(function (customer){
-        if (selectedValue === customer.customer_id){
+    customerArray.map(function (customer) {
+        if (selectedValue === customer.customer_id) {
             $('#customer-nameO').val(customer.customer_name);
             $('#city-name').val(customer.city);
             $('#mobile').val(customer.telephone);
@@ -64,9 +64,9 @@ $('#customer-idO').change(function() {
 });
 
 
-function loadTable(){
+function loadTable() {
     $('#addToCart').empty()
-    orderArray.map(function (orders){
+    orderArray.map(function (orders) {
         let record = `
                             <tr>
                                 <td class="code">${orders.itemCode}</td>
@@ -82,3 +82,21 @@ function loadTable(){
         $('#addToCart').append(record)
     })
 }
+
+$('#purchase').on('click', () => {
+    $('#order-table').empty();
+    orderArray.map(function (details) {
+        let orderRecode = `<tr>
+                                    <td>${details.orderId}{</td>
+                                    <td>${details.customer_name}</td>
+                                    <td>${details.item_name}</td>
+                                    <td>${details.orderQTY}</td>
+                                    <td>${details.discount}</td>
+                                    <td>${details.price}</td>
+                                </tr>`
+
+        $('#order-tbl-tbody').append(orderRecode);
+    })
+
+
+})

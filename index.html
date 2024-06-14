@@ -167,7 +167,7 @@
         </div>
     </div>
 
-    <div class="table-responsive dashBordTable mt-4">
+    <div class="table-responsive dashBordTable mt-4" id="order-table">
         <table class="table">
             <thead>
             <tr class="table-info">
@@ -179,47 +179,8 @@
                 <th scope="col">Price</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>@twitter</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td>@twitter</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>@fat</td>
-            </tr>
+            <tbody id="order-tbl-tbody">
+
             </tbody>
         </table>
     </div>
@@ -522,9 +483,9 @@
 
 <!--order form-->
 <section id="order-form" class="container pb-5 mt-4">
-    <div class="text-end mb-3">
+   <!-- <div class="text-end mb-3">
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#order-details">All Orders</button>
-    </div>
+    </div>-->
 
     <div class="row">
         <!-- Place Order Form -->
@@ -684,7 +645,7 @@
                         <p id="net-total" class="form-control-plaintext">$0.00</p>
                     </div>
                     <div class="d-flex justify-content-end mt-3">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#purchaseModal" id="purchase">
                             Purchase
                         </button>
                     </div>
