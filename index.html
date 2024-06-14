@@ -548,7 +548,9 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label for="customer-idO" class="form-label">Customer ID</label>
-                                <input type="text" id="customer-idO" class="form-control">
+                                <!--                                <input type="text" id="customer-idO" class="form-control">-->
+                                <select id="customer-idO" class="form-select">
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -583,7 +585,9 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="form-group">
                                 <label for="item-code" class="form-label">Item Code</label>
-                                <input type="text" id="item-code" class="form-control">
+                                <!--                                <input type="text" id="item-code" class="form-control">-->
+                                <select id="item-code" class="form-select">
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -635,23 +639,14 @@
                             <tr>
                                 <th>Item Code</th>
                                 <th>Item Name</th>
-                                <th>Item Price</th>
                                 <th>Qty</th>
+                                <th>Discount</th>
                                 <th>Total</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>I001</td>
-                                <td>Sunlight</td>
-                                <td>150.00</td>
-                                <td>3</td>
-                                <td>450.00</td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm">Remove</button>
-                                </td>
-                            </tr>
+                            <tbody id="addToCart">
+
                             </tbody>
                         </table>
                     </div>
@@ -676,10 +671,10 @@
                         <label for="balance" class="form-label">Balance</label>
                         <input type="text" id="balance" class="form-control" readonly>
                     </div>
-                    <div class="form-group mb-3">
-                        <label>Total</label>
-                        <p id="total" class="form-control-plaintext">$0.00</p>
-                    </div>
+                    <!--                    <div class="form-group mb-3">-->
+                    <!--                        <label>Total</label>-->
+                    <!--                        <p id="total" class="form-control-plaintext">$0.00</p>-->
+                    <!--                    </div>-->
                     <div class="form-group mb-3">
                         <label>Discount</label>
                         <p id="total-discount" class="form-control-plaintext">$0.00</p>

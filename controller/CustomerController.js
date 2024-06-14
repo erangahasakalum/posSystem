@@ -2,6 +2,7 @@ import CustomerModel from "../model/CustomerModel.js";
 import {customerArray} from "../db/db.js";
 
 var recodeIndex;
+
 $('#customer-save').on('click', () => {
     saveCustomer();
 })
@@ -15,15 +16,19 @@ $('#delete-customer').on('click', () => {
 })
 
 function saveCustomer() {
+
     let customer_id = $('#customer_id').val();
+
     let customer_name = $('#customer_name').val();
     let city = $('#city').val();
     let telephone = $('#telephone').val();
-
     var regexId = /^C00-\d{3}$/;
+
     var regexName = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
     var regexCity = /^[A-Za-z\s]+$/;
     var regexContact = /^\d{10}$/;
+
+    $('#customer-idO').append($('<option>').text(customer_id)); // place order customer id comboBox set customer code
 
     function isDuplicateId(id) {
         return customerArray.some(customer => customer.customer_id === id);
@@ -177,4 +182,3 @@ function deleteCustomers() {
 $('#close-customer-save').on('click', () => {
     clearSaveFields()
 })
-

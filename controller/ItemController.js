@@ -21,6 +21,8 @@ function saveItem() {
     let iQuantity = $('#quantity').val();
     let iPrice = $('#price').val();
 
+    $('#item-code').append($('<option>').text(iId)); // place order customer id comboBox set item code
+
     var regexId = /^I00-\d{3}$/;
     var regexName = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
     var regQuantity = /^\d+$/;
@@ -78,7 +80,7 @@ function saveItem() {
             iPrice);
 
         itemArray.push(itemObj);
-        loadItem()
+        loadItem();
     }
 
 }
@@ -177,5 +179,3 @@ function deleteItem() {
     loadItem();
 
 }
-
-
