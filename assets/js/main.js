@@ -144,6 +144,37 @@ $("#order-click").on('click',()=>{
     })
 
 })
+
+
+$("#log-out-click").on('click',()=>{
+    console.log("clicked")
+    $("#sign-in-form").css({
+        display:'block'
+    })
+
+    $("#order-form").css({
+        display:'none'
+    })
+    $("#item-form").css({
+        display:'none'
+    })
+    $("#customer-form").css({
+        display:'none'
+    })
+
+    $("#dashboard-form").css({
+        display:'none'
+    })
+
+    $("#header").css({
+        display:'none'
+    })
+
+    $('login-form').css({
+        display:'block'
+    })
+
+})
 /*
 $('#login-btn').on('click',()=>{
     $('#login-form').css({

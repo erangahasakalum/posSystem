@@ -1,23 +1,24 @@
-.login{
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
     background: white;
     min-height: 90vh;
-
 }
-.login-area{
-    width: 880px;
+
+.login-area {
+    width: 100%;
+    max-width: 880px;
     min-height: 400px;
     overflow: hidden;
     border-radius: 5px;
     background: #222;
     display: flex;
-    box-shadow: 15px 5px 30px rgba(0,0,0,0.3);
-  /*  border: 1px solid black;*/
+    flex-direction: row;
+    box-shadow: 15px 5px 30px rgba(0, 0, 0, 0.3);
 }
 
-.login-img{
+.login-img {
     flex-basis: 50%;
     display: flex;
     justify-content: center;
@@ -25,18 +26,19 @@
     flex-direction: column;
     background: #00b894;
 }
-.login-img img{
+
+.login-img img {
     width: 100%;
 }
 
-.login-form{
+.login-form {
     flex-basis: 50%;
     background: #333;
     font-family: roboto, serif;
     padding: 25px;
 }
 
-.login-form h1{
+.login-form h1 {
     text-align: center;
     margin-top: 25px;
     font-size: 2.5em;
@@ -44,7 +46,7 @@
     color: #fff;
 }
 
-.t-box{
+.t-box {
     border-radius: 3px;
     background: transparent;
     outline: none;
@@ -54,7 +56,7 @@
     margin: 30px 0;
 }
 
-.t-box input{
+.t-box input {
     background: transparent;
     width: 90%;
     outline: none;
@@ -62,24 +64,22 @@
     padding-left: 5px;
 }
 
-::placeholder{
+::placeholder {
     color: #777;
 }
 
-.t-box i{
+.t-box i {
     color: #55efc4;
     font-size: 15px;
     padding: 7px;
-
 }
 
-.login-form a{
+.login-form a {
     margin-left: 70%;
-    /*margin-top: 10%;*/
     color: red;
 }
 
-.login-btn{
+.login-btn {
     width: 100%;
     border: 0;
     border-radius: 5px;
@@ -89,25 +89,61 @@
     font-size: 18px;
 }
 
-.login-img:hover img{
+.login-img:hover img {
     transform: scale(1.1);
 }
 
-.sign-up{
+.sign-up {
     position: relative;
     right: 28%;
     top: 1rem;
     margin: 0;
-
 }
 
-/*responsive*/
-@media(width:768px) {
-    .login-area{
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .login-area {
         flex-direction: column;
         margin: 0 15px;
     }
-    .login-form{
-        flex-basis: 75%;
+
+    .login-img, .login-form {
+        flex-basis: 100%;
+    }
+
+    .login-img img {
+        width: 100%;
+    }
+
+    .login-form h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .t-box {
+        margin: 20px 0;
+    }
+
+    .login-form a {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .login-area {
+        width: 100%;
+        max-width: none;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .login-form h1 {
+        font-size: 1.8em;
+    }
+
+    .login-form a {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
